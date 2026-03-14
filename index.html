@@ -1,30 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Portfolio|Sakshi Hegde</title>
-<link rel="stylesheet",href="style.css">
- </head>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sakshi Hegde | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:#e2e8f0;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
+z-index:100;
+}
+
+nav h2{
+font-size:20px;
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#cbd5f5;
+font-size:14px;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:0 10%;
+}
+
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:520px;
+}
+
+.hero-text h1{
+font-size:36px;
+font-weight:600;
+margin-bottom:15px;
+line-height:1.3;
+}
+
+.hero-text p{
+font-size:15px;
+line-height:1.6;
+color:#94a3b8;
+}
+
+
+/* FLOATING ANIMATION */
+
+.hero-animation{
+animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
+
+}
+
+
+/* SECTIONS */
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:24px;
+margin-bottom:30px;
+color:#38bdf8;
+}
+
+
+/* ABOUT */
+
+.about{
+max-width:800px;
+font-size:15px;
+line-height:1.7;
+color:#94a3b8;
+}
+
+
+/* SKILLS */
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.skill{
+background:#1e293b;
+padding:12px;
+border-radius:8px;
+font-size:14px;
+text-align:center;
+transition:0.3s;
+}
+
+.skill:hover{
+background:#334155;
+transform:translateY(-3px);
+}
+
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.project{
+background:#1e293b;
+padding:22px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.05);
+transition:0.3s;
+}
+
+.project:hover{
+transform:translateY(-6px);
+border-color:#38bdf8;
+}
+
+.project h3{
+font-size:18px;
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.project p{
+font-size:14px;
+color:#94a3b8;
+line-height:1.6;
+margin-bottom:12px;
+}
+
+.stack{
+font-size:13px;
+color:#cbd5f5;
+margin-bottom:15px;
+}
+
+.project button{
+padding:8px 18px;
+border:none;
+background:#38bdf8;
+border-radius:20px;
+font-size:13px;
+cursor:pointer;
+}
+
+
+/* CONTACT */
+
+.contact a{
+display:block;
+margin:8px 0;
+font-size:14px;
+color:#38bdf8;
+text-decoration:none;
+}
+
+footer{
+margin-top:60px;
+padding:20px;
+text-align:center;
+font-size:13px;
+color:#64748b;
+border-top:1px solid rgba(255,255,255,0.05);
+}
+
+</style>
+
+</head>
 
 <body>
-    <header>
-        <h1>Sakshi Hegde</h1>
 
-    </header>
-    <main>
-        <section id="hero">
-            <div class="space">
-                <div class="rocket"></div>
-                <div class="planet planet1"></div>
-                <div class="planet planet2"></div>
-            
-                </div>
 
-           <h2>Hello , Myself Saakshi Hegde!<p>Welcome to my portfolio website!!<p>
+<nav>
 
-           </p></h2>
-           </section>
-</main>
-<script  src="script.js"></script>
-</body></html>
+<h2>Sakshi Hegde</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+
+<section class="hero">
+
+<div class="hero-container">
+
+<div class="hero-text">
+
+<h1>Hello, welcome to my portfolio website.</h1>
+
+<p>
+Computer Science student at BMS College of Engineering, Bengaluru.
+
+</p>
+
+</div>
+
+
+<div class="hero-animation">
+
+<lottie-player
+src="https://assets7.lottiefiles.com/packages/lf20_3rwasyjy.json"
+background="transparent"
+speed="1"
+style="width:380px;height:380px"
+loop
+autoplay>
+</lottie-player>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="about">
+
+<h2 class="section-title">About</h2>
+
+<div class="about">
+
+<p>
+I'm a Computer Science student at <b>BMS College of Engineering, Bengaluru</b>.
+My interest in technology started with curiosity about how apps and games work.
+</p>
+
+<p>
+Currently focused on strengthening <b>Data Structures and Algorithms in C++</b>
+while exploring full-stack development.
+</p>
+
+<p>
+I enjoy building projects that solve real-world problems and continuously
+learning new technologies.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">C++ / DSA</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React</div>
+<div class="skill">Node.js</div>
+<div class="skill">MongoDB</div>
+<div class="skill">SQL</div>
+<div class="skill">Machine Learning</div>
+<div class="skill">Java</div>
+
+</div>
+
+</section>
+
+
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<h3>MediRush — AI Healthcare Platform</h3>
+
+<p>
+AI-powered healthcare platform that predicts diseases from symptoms
+and connects patients to nearby doctors instantly.
+</p>
+
+<div class="stack">
+React • Node.js • Express • MySQL • JWT
+</div>
+
+<button>Live Demo</button>
+
+</div>
+
+
+<div class="project">
+
+<h3>BMSCE Campus Hub</h3>
+
+<p>
+Smart campus platform for events, announcements, notices and a
+Lost & Found system with camera upload feature.
+</p>
+
+<div class="stack">
+Android • Javacd • Firebase
+</div>
+
+<button>Live Demo</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+
+<a href="mailto:sakshihegde135@gmail.com">📧 sakshihegde135@gmail.com</a>
+
+<a href="https://github.com/SakshiHegde06" target="_blank">💻 GitHub</a>
+
+<a href="https://leetcode.com/u/__sakshi__66/" target="_blank">🧠 LeetCode</a>
+
+<a href="https://www.linkedin.com/in/sakshi-hegde-4a9836332" target="_blank">🔗 LinkedIn</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 Sakshi Hegde
+
+</footer>
+
+</body>
+</html>
+
