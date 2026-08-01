@@ -1,413 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakshi Hegde | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+    }
 
-<title>Sakshi Hegde | Portfolio</title>
+    /* ---- NAVBAR ---- */
+    nav {
+      position: fixed;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 10%;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      z-index: 100;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    nav h2 {
+      font-size: 20px;
+      color: #38bdf8;
+      letter-spacing: -0.3px;
+    }
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
 
-<style>
+    nav a {
+      text-decoration: none;
+      color: #cbd5f5;
+      font-size: 14px;
+      font-weight: 400;
+      transition: 0.2s;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Inter,sans-serif;
-scroll-behavior:smooth;
-}
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-body{
-background:#0f172a;
-color:#e2e8f0;
-}
+    /* ---- HERO ---- */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10%;
+    }
 
-/* NAVBAR */
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
 
-nav{
-position:fixed;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 10%;
-background:rgba(15,23,42,0.7);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,0.05);
-z-index:100;
-}
+    .hero-text {
+      max-width: 520px;
+    }
 
-nav h2{
-font-size:20px;
-color:#38bdf8;
-}
+    .hero-text h1 {
+      font-size: 36px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      color: #f1f5f9;
+    }
 
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
+    .hero-text p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #94a3b8;
+    }
 
-nav a{
-text-decoration:none;
-color:#cbd5f5;
-font-size:14px;
-}
+    .hero-animation {
+      animation: float 4s ease-in-out infinite;
+    }
 
-nav a:hover{
-color:#38bdf8;
-}
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
 
+    /* ---- SECTIONS ---- */
+    section {
+      padding: 100px 10%;
+    }
 
-/* HERO */
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #38bdf8;
+      letter-spacing: -0.2px;
+    }
 
-.hero{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:0 10%;
-}
+    /* ---- ABOUT (with the story) ---- */
+    .about {
+      max-width: 800px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #94a3b8;
+    }
 
-.hero-container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:60px;
-flex-wrap:wrap;
-}
+    .about b {
+      color: #e2e8f0;
+      font-weight: 500;
+    }
 
-.hero-text{
-max-width:520px;
-}
+    .about p + p {
+      margin-top: 16px;
+    }
 
-.hero-text h1{
-font-size:36px;
-font-weight:600;
-margin-bottom:15px;
-line-height:1.3;
-}
+    .info-block {
+      background: #1e293b;
+      padding: 20px 24px;
+      border-radius: 14px;
+      border-left: 4px solid #38bdf8;
+      margin: 20px 0 10px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #cbd5f5;
+    }
 
-.hero-text p{
-font-size:15px;
-line-height:1.6;
-color:#94a3b8;
-}
+    .info-block code {
+      background: #0f172a;
+      padding: 2px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #38bdf8;
+      font-family: 'Inter', monospace;
+    }
 
+    .story-text {
+      font-size: 15px;
+      line-height: 1.9;
+      color: #cbd5f5;
+    }
 
-/* FLOATING ANIMATION */
+    .story-text .highlight {
+      color: #38bdf8;
+      font-weight: 500;
+    }
 
-.hero-animation{
-animation: float 4s ease-in-out infinite;
-}
+    /* ---- SKILLS (card style) ---- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
 
-@keyframes float{
+    .skill-card {
+      background: #1e293b;
+      border-radius: 16px;
+      padding: 22px 20px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
 
-0%{transform:translateY(0px);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0px);}
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
 
-}
+    .skill-card-title {
+      font-size: 17px;
+      font-weight: 500;
+      color: #38bdf8;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
+    .skill-card-title span {
+      font-size: 20px;
+    }
 
-/* SECTIONS */
+    .skill-sub-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 10px;
+    }
 
-section{
-padding:100px 10%;
-}
+    .skill-sub-item {
+      background: #0f172a;
+      padding: 5px 14px;
+      border-radius: 30px;
+      font-size: 12.5px;
+      color: #cbd5f5;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: 0.2s;
+    }
 
-.section-title{
-font-size:24px;
-margin-bottom:30px;
-color:#38bdf8;
-}
+    .skill-sub-item:hover {
+      background: #38bdf8;
+      color: #0f172a;
+      border-color: #38bdf8;
+    }
 
+    .skill-sub-item.highlight {
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 500;
+    }
 
-/* ABOUT */
+    /* ---- PROJECTS ---- */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
 
-.about{
-max-width:800px;
-font-size:15px;
-line-height:1.7;
-color:#94a3b8;
-}
+    .project {
+      background: #1e293b;
+      padding: 24px 22px 22px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
 
+    .project:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
 
-/* SKILLS */
+    .project h3 {
+      font-size: 18px;
+      color: #38bdf8;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
 
-.skills{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-gap:15px;
-margin-top:20px;
-}
+    .project p {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.7;
+      margin-bottom: 12px;
+      flex: 1;
+    }
 
-.skill{
-background:#1e293b;
-padding:12px;
-border-radius:8px;
-font-size:14px;
-text-align:center;
-transition:0.3s;
-}
+    .project .stack {
+      font-size: 13px;
+      color: #cbd5f5;
+      background: #0f172a;
+      padding: 6px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
 
-.skill:hover{
-background:#334155;
-transform:translateY(-3px);
-}
+    .project button {
+      padding: 8px 22px;
+      border: none;
+      background: #38bdf8;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #0f172a;
+      cursor: pointer;
+      transition: 0.2s;
+      align-self: flex-start;
+    }
 
+    .project button:hover {
+      background: #7dd3fc;
+      transform: scale(1.02);
+    }
 
-/* PROJECTS */
+    /* ---- CONTACT ---- */
+    .contact a {
+      display: inline-block;
+      margin: 8px 20px 8px 0;
+      font-size: 14px;
+      color: #38bdf8;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-}
+    .contact a:hover {
+      border-bottom-color: #38bdf8;
+      color: #7dd3fc;
+    }
 
-.project{
-background:#1e293b;
-padding:22px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.05);
-transition:0.3s;
-}
+    footer {
+      margin-top: 40px;
+      padding: 24px 10%;
+      text-align: center;
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-.project:hover{
-transform:translateY(-6px);
-border-color:#38bdf8;
-}
-
-.project h3{
-font-size:18px;
-color:#38bdf8;
-margin-bottom:10px;
-}
-
-.project p{
-font-size:14px;
-color:#94a3b8;
-line-height:1.6;
-margin-bottom:12px;
-}
-
-.stack{
-font-size:13px;
-color:#cbd5f5;
-margin-bottom:15px;
-}
-
-.project button{
-padding:8px 18px;
-border:none;
-background:#38bdf8;
-border-radius:20px;
-font-size:13px;
-cursor:pointer;
-}
-
-
-/* CONTACT */
-
-.contact a{
-display:block;
-margin:8px 0;
-font-size:14px;
-color:#38bdf8;
-text-decoration:none;
-}
-
-footer{
-margin-top:60px;
-padding:20px;
-text-align:center;
-font-size:13px;
-color:#64748b;
-border-top:1px solid rgba(255,255,255,0.05);
-}
-
-</style>
-
+    @media (max-width: 700px) {
+      nav ul {
+        gap: 16px;
+      }
+      .hero-text h1 {
+        font-size: 28px;
+      }
+      .hero-animation lottie-player {
+        width: 260px !important;
+        height: 260px !important;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-
-<nav>
-
-<h2>Sakshi Hegde</h2>
-
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-
-</nav>
-
-
-
-<section class="hero">
-
-<div class="hero-container">
-
-<div class="hero-text">
-
-<h1>Hello, welcome to my portfolio website.</h1>
-
-<p>
-Computer Science student at BMS College of Engineering, Bengaluru.
-
-</p>
-
-</div>
-
-
-<div class="hero-animation">
-
-<lottie-player
-src="https://assets7.lottiefiles.com/packages/lf20_3rwasyjy.json"
-background="transparent"
-speed="1"
-style="width:380px;height:380px"
-loop
-autoplay>
-</lottie-player>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="about">
-
-<h2 class="section-title">About</h2>
-
-<div class="about">
-
-<p>
-I'm a Computer Science student at <b>BMS College of Engineering, Bengaluru</b>.
-My interest in technology started with curiosity about how apps and games work.
-</p>
-
-<p>
-Currently focused on strengthening <b>Data Structures and Algorithms in C++</b>
-while exploring full-stack development.
-</p>
-
-<p>
-I enjoy building projects that solve real-world problems and continuously
-learning new technologies.
-</p>
-
-</div>
-
-</section>
-
-
-
-<section id="skills">
-
-<h2 class="section-title">Skills</h2>
-
-<div class="skills">
-
-<div class="skill">C++ / DSA</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">JavaScript</div>
-<div class="skill">React</div>
-<div class="skill">Node.js</div>
-<div class="skill">MongoDB</div>
-<div class="skill">SQL</div>
-<div class="skill">Machine Learning</div>
-<div class="skill">Java</div>
-
-</div>
-
-</section>
-
-
-
-<section id="projects">
-
-<h2 class="section-title">Projects</h2>
-
-<div class="projects">
-
-<div class="project">
-
-<h3>MediRush — AI Healthcare Platform</h3>
-
-<p>
-AI-powered healthcare platform that predicts diseases from symptoms
-and connects patients to nearby doctors instantly.
-</p>
-
-<div class="stack">
-React • Node.js • Express • MySQL • JWT
-</div>
-
-<button>Live Demo</button>
-
-</div>
-
-
-<div class="project">
-
-<h3>BMSCE Campus Hub</h3>
-
-<p>
-Smart campus platform for events, announcements, notices and a
-Lost & Found system with camera upload feature.
-</p>
-
-<div class="stack">
-Android • Javacd • Firebase
-</div>
-
-<button>Live Demo</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="contact">
-
-<a href="mailto:sakshihegde135@gmail.com">📧 sakshihegde135@gmail.com</a>
-
-<a href="https://github.com/SakshiHegde06" target="_blank">💻 GitHub</a>
-
-<a href="https://leetcode.com/u/__sakshi__66/" target="_blank">🧠 LeetCode</a>
-
-<a href="https://www.linkedin.com/in/sakshi-hegde-4a9836332" target="_blank">🔗 LinkedIn</a>
-
-</div>
-
-</section>
-
-
-<footer>
-
-© 2026 Sakshi Hegde
-
-</footer>
-
+  <nav>
+    <h2>Sakshi Hegde</h2>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Hello, welcome to my portfolio.</h1>
+        <p style="margin-top:12px; font-size:14px; color:#64748b;">C++ · Java · Python · Full-Stack · DSA</p>
+      </div>
+      <div class="hero-animation">
+        <lottie-player
+          src="https://assets7.lottiefiles.com/packages/lf20_3rwasyjy.json"
+          background="transparent"
+          speed="1"
+          style="width:380px;height:380px"
+          loop
+          autoplay>
+        </lottie-player>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT with the personal story -->
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <div class="about">
+      <!-- const information block -->
+      <div class="info-block">
+        <code>const information = {</code><br />
+        &nbsp;&nbsp;Name: "Sakshi Hegde",<br />
+        &nbsp;&nbsp;College: "BMSCE Bengaluru",<br />
+        &nbsp;&nbsp;Hobbies: ["Singing", "Reading books", "Chess", "Drawing"],<br />
+        &nbsp;&nbsp;Motive: "The fruit of the hardwork gonna be sweet for sure"<br />
+        <code>};</code>
+      </div>
+
+      <!-- Personal story -->
+      <div class="story-text">
+        <p>
+          <span class="highlight">Hello, I'm Sakshi Hegde.</span> 
+          During my childhood days, when I used to play games, I was really interested in 
+          <span class="highlight">how games would actually work?</span> 
+          How are they built? How does an e-commerce system work? 
+          <span class="highlight">Can I build something like that too?</span> 
+          Slowly, that curiosity grew and led me to the path of engineering.
+        </p>
+        <p>
+          Today, I'm a Computer Science student at 
+          <b>BMS College of Engineering, Bengaluru</b>, 
+          where I'm strengthening my <b>Data Structures & Algorithms</b> 
+          while exploring full-stack development. I enjoy building projects 
+          that solve real-world problems and continuously learning new technologies.
+        </p>
+        <p>
+          I have a strong foundation in <b>Python (NumPy, Pandas, OOP)</b>, 
+          <b>Java (OOP, Exception Handling, Packages, Interfaces, Annotations, JDBC)</b>, 
+          <b>C++ (STL)</b>, and <b>JavaScript (Strings, Arrays, Functions, DOM, Event Handling)</b>.
+          I'm also well-versed in <b>REST APIs</b>, <b>Socket.IO</b>, 
+          and core CS concepts including <b>OS, DBMS, and DSA</b>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS (card style with sub-concepts) -->
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+
+      <!-- Python -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🐍</span> Python</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item highlight">NumPy</span>
+          <span class="skill-sub-item highlight">Pandas</span>
+          <span class="skill-sub-item highlight">OOP</span>
+          <span class="skill-sub-item">Functions</span>
+          <span class="skill-sub-item">Modules</span>
+          <span class="skill-sub-item">File I/O</span>
+        </div>
+      </div>
+
+      <!-- Java -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>☕</span> Java</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item highlight">OOP</span>
+          <span class="skill-sub-item highlight">Exception Handling</span>
+          <span class="skill-sub-item highlight">Packages</span>
+          <span class="skill-sub-item highlight">Interfaces</span>
+          <span class="skill-sub-item highlight">Annotations</span>
+          <span class="skill-sub-item highlight">JDBC</span>
+          <span class="skill-sub-item">Collections</span>
+          <span class="skill-sub-item">Streams</span>
+        </div>
+      </div>
+
+      <!-- C++ -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>⚡</span> C++</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item highlight">STL</span>
+          <span class="skill-sub-item">OOP</span>
+          <span class="skill-sub-item">Templates</span>
+          <span class="skill-sub-item">Pointers</span>
+          <span class="skill-sub-item">Memory Mgmt</span>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🔧</span> C</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item">Pointers</span>
+          <span class="skill-sub-item">Structures</span>
+          <span class="skill-sub-item">Dynamic Memory</span>
+          <span class="skill-sub-item">File Handling</span>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🟨</span> JavaScript</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item highlight">Strings</span>
+          <span class="skill-sub-item highlight">Arrays</span>
+          <span class="skill-sub-item highlight">Functions</span>
+          <span class="skill-sub-item highlight">DOM</span>
+          <span class="skill-sub-item highlight">Event Handling</span>
+          <span class="skill-sub-item">ES6+</span>
+          <span class="skill-sub-item">Promises</span>
+          <span class="skill-sub-item">Async/Await</span>
+        </div>
+      </div>
+
+      <!-- Frontend -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🎨</span> Frontend</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item">HTML</span>
+          <span class="skill-sub-item">CSS</span>
+          <span class="skill-sub-item">React</span>
+
+        </div>
+      </div>
+
+      <!-- Backend -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>⚙️</span> Backend</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item highlight">Node.js + Express</span>
+          <span class="skill-sub-item highlight">Spring</span>
+          <span class="skill-sub-item highlight">REST API</span>
+          <span class="skill-sub-item highlight">Socket.IO</span>
+      
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🗄️</span> Databases</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item highlight">MongoDB</span>
+          <span class="skill-sub-item highlight">MySQL</span>
+        </div>
+      </div>
+
+      <!-- Tools & Core CS -->
+      <div class="skill-card">
+        <div class="skill-card-title"><span>🛠️</span> Tools &amp; Core CS</div>
+        <div class="skill-sub-list">
+          <span class="skill-sub-item">GitHub</span>
+          <span class="skill-sub-item">VS Code</span>
+          <span class="skill-sub-item highlight">DSA</span>
+          <span class="skill-sub-item highlight">Algorithms</span>
+          <span class="skill-sub-item highlight">OS</span>
+          <span class="skill-sub-item highlight">DBMS</span>
+          <span class="skill-sub-item">OOP</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+
+      <div class="project">
+        <h3>MediRush — AI Healthcare</h3>
+        <p>AI-powered platform that predicts diseases from symptoms and connects patients to nearby doctors instantly.</p>
+        <div class="stack">React · Node.js · Express · MySQL · JWT</div>
+        <button>Live Demo</button>
+      </div>
+
+      <div class="project">
+        <h3>BMSCE Campus Hub</h3>
+        <p>Smart campus platform for events, announcements, notices and a Lost & Found system with camera upload feature.</p>
+        <div class="stack">Android · Java · Firebase</div>
+        <button>Live Demo</button>
+      </div>
+
+      <div class="project">
+        <h3>SchoolBuddy — School Management</h3>
+        <p>Comprehensive AI-powered school management system with role-based dashboards, attendance, marks, homework, and AI-driven performance analysis.</p>
+        <div class="stack">React · Spring Boot · MongoDB · FastAPI</div>
+        <button>Live Demo</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact">
+      <a href="mailto:sakshihegde135@gmail.com"> sakshihegde135@gmail.com</a>
+      <a href="https://github.com/SakshiHegde06" target="_blank"> GitHub</a>
+      <a href="https://leetcode.com/u/__sakshi__66/" target="_blank">LeetCode</a>
+      <a href="https://www.linkedin.com/in/sakshi-hegde-4a9836332" target="_blank"> LinkedIn</a>
+      <a href="https://www.geeksforgeeks.org/profile/sakshihemoev" target="blank">Geeks for Geeks</a>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Sakshi Hegde
+  </footer>
 </body>
 </html>
